@@ -17,7 +17,7 @@ h(e,2).
 h(d,3).
 h(g,0).
 
-best_first(Start,Goal) :-					% best_first(a,g).
+best_first(Start,Goal) :-					
     search([Start],Goal).
 
 search([Goal|_],Goal) :-
@@ -31,4 +31,7 @@ search([Node|_],Goal):-
 find_best(Node,Next) :-
     edge(Node,Next),h(Next,H),
     \+ (edge(Node,Other),h(Other,H2),H2<H).
-    
+
+
+
+Query : best_first(a,g).
