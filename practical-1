@@ -1,4 +1,4 @@
-(* Experiment 1 :- Create a simple Knowledge Base using facts, predicates, clauses, and goals (Student-Course Database) *)
+Experiment 1 :- Create a simple Knowledge Base using facts, predicates, clauses, and goals (Student-Course Database) 
 
 
 
@@ -20,4 +20,4 @@ enroll(sujal,ai).
 count:-findall(X,enroll(X,ai),List),length(List,C),write(C).
 
 
-(* query : count *)
+Query : count 
