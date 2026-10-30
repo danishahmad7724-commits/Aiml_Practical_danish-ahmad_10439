@@ -2,24 +2,33 @@ Experiment-7 : Implement Greedy Best-First Search using a heuristic function to 
 
 
 
+
 edge(a,b).
 edge(a,c).
-edge(b,d).
-edge(b,e).
-edge(d,g).
-edge(d,h).
-edge(e,i).
 edge(c,f).
+edge(b,e).
+edge(b,d).
+edge(e,g).
 
-dfs(Start,Goal,Spath):-
-    dfs_search(Start,Goal,Spath).
+h(b,4).
+h(c,5).
+h(f,1).
+h(e,2).
+h(d,3).
+h(g,0).
 
-dfs_search(Goal,Goal,[Goal]).
+best_first(Start,Goal) :-					% best_first(a,g).
+    search([Start],Goal).
 
-dfs_search(Node,Goal,[Node|Path]):-      
-    edge(Node,Next),
-    dfs_search(Next,Goal,Path).
+search([Goal|_],Goal) :-
+    write(Goal).
 
+search([Node|_],Goal):-
+    write(Node),write(' -> '),
+    find_best(Node,Next),
+    search([Next],Goal).
 
-
-Query : dfs(a,g,Path).
+find_best(Node,Next) :-
+    edge(Node,Next),h(Next,H),
+    \+ (edge(Node,Other),h(Other,H2),H2<H).
+    
