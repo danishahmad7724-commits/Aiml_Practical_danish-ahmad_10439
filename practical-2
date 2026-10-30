@@ -48,4 +48,3 @@ fib(N,F) :-
 
 
 Query : fib(7, X).
-
