@@ -37,3 +37,4 @@ search([(F,Node,Path)|Rest], Goal, FinalPath) :-
 Query : astar(a,e,Path).
 
 
+
