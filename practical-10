@@ -28,3 +28,4 @@ step(X,T,Best) :-
 
 
 Query : anneal(1,Best).
+
