@@ -28,3 +28,4 @@ better(X,Y):-
 
 
 Query : hill_climb(X,Best).
+
